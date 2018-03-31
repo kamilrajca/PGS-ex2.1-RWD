@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display');
+body {
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
+}
+header {
+  background: url("../img/hero-background.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.hamburger {
+  width: 35px;
+  height: 19px;
+  border: 0;
+  border-top: 3px solid #fff;
+  background: transparent;
+  position: relative;
+  margin: 20px;
+  transition: 0.3s transform linear;
+}
+.hamburger:before, .hamburger:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  border-top: 3px solid #fff;
+  transform: translateY(5px);
+}
+.hamburger:before {
+  margin-left: 5px;
+}
+.hamburger:after {
+  transform: translateY(15px);
+  width: 35px;
+  transition: 0.3s transform linear;
+}
+/*efekt animacji hamburgera*/
+.hamburger:focus {
+  transform: rotate(45deg);
+  border: none;
+}
+.hamburger:focus:after {
+  transform: rotate(-90deg) translateX(-5px);
+}
+.hamburger:focus:before {
+  width: 35px;
+  margin: 0;
+}
+.site-nav {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  /*justify-content: flex-end;*/
+  align-content: center;
+  align-items: center;
+  padding: 50px 10px 10px 10px;
+  box-sizing: border-box;
+}
+.site-nav-logo {
+  margin-right: auto;
+}
+.btn-search {
+  background: none;
+  border: none;
+}
+.site-menu {
+  display: flex;
+  box-sizing: border-box;
+  position: absolute;
+  top: 20px;
+  margin: 0 auto;
+  /*right: 0;*/
+  /*height: 100%;*/
+  width: 100%;
+  transform: translateX(100%);
+  transition: 0.3s transform ease-in-out;
+}
+.site-menu ul {
+  padding: 0;
+  list-style: none;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.site-menu ul li {
+  background: none;
+  margin-top: 20px;
+  flex-basis: 100%;
+  height: 30px;
+  text-transform: uppercase;
+}
+
+.site-menu a {
+  display: flex;
+  box-sizing: border-box;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.site-menu a:hover {
+  opacity: 0.5;
+}
+/*ustawienie ruchomego menu*/
+.hamburger:focus ~ .site-menu, .site-menu:hover {
+  transform: translateX(0);
+}
+
+
+/*media min-width 768px*/
+@media (min-width: 768px) {
+  .site-menu {
+    transform: none;
+    top: 35px;
+  }
+  .site-menu ul {
+    flex-wrap: nowrap;
+    width: 40%;
+  }
+  .site-menu ul li {
+    margin-top: 0;
+  }
+
+}
