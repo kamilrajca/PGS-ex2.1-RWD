@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display');
 body {
-  overflow: hidden;
+  /*overflow: hidden;*/
   font-family: 'Montserrat', sans-serif;
   font-size: 62.5%;
   color: #fff;
 }
 .hero {
   background: url("../img/hero-background.jpg");
-  height: 100vh;
   background-size: cover;
   background-position: center;
 }
@@ -73,8 +72,6 @@ body {
   position: absolute;
   top: 20px;
   margin: 0 auto;
-  /*right: 0;*/
-  /*height: 100%;*/
   width: 100%;
   transform: translateX(100%);
   transition: 0.3s transform ease-in-out;
@@ -94,7 +91,6 @@ body {
   height: 30px;
   text-transform: uppercase;
 }
-
 .site-menu a {
   display: flex;
   box-sizing: border-box;
@@ -103,7 +99,7 @@ body {
   justify-content: center;
   height: 100%;
   color: #fff;
-  font-size: 1.0rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 .site-menu a:hover {
@@ -115,16 +111,16 @@ body {
 }
 .caption {
   text-align: center;
-  margin: 0 auto;
+  margin: 140px auto 0 auto;
   width: 90%;
 }
 .caption h1 {
   font-family: PlayfairDisplay;
-  font-size: 3.0rem;
+  font-size: 2.0rem;
   font-weight: 400;
 }
 .caption p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 300;
 }
 /*line btn*/
@@ -142,7 +138,7 @@ body {
   background-color: #da7074;
   border-radius: 50px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   line-height: 46px;
   position: relative;
@@ -164,6 +160,9 @@ body {
   background: #da7074;
   box-shadow: 10px 20px 0 #da7074;
 } 
+.btn:focus {
+  display: none;
+}
 .line {
   content: '';
   height: 1px;
@@ -175,9 +174,136 @@ body {
   border: none;
   transform: scale(0.5);
   margin-top: 150px;
+
+}
+/*image-row*/
+.image-row .img-1 {
+  background-image: url(../img/dolor.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.image-row .img-2 {
+  background-image: url(../img/ligula.jpg);
+   background-size: cover;
+  background-position: center;
+}
+.image-row .img-3 {
+  background-image: url(../img/consectetur.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.image-row .img-4 {
+  background-image: url(../img/ullamcorper.jpg);
+   background-size: cover;
+  background-position: center;
+}
+.image-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+.image-gallery {
+  width: 50%;
+}
+.image-row h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  padding: 200px 0 18px 0; 
+  margin: 0;
+}
+.image-row p {
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 0;
+}
+/*footer*/
+.collumn {
+  color: #000;
+}
+.cols {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 6% 5%;  
+}
+.collumn {
+  width: 33%;
+}
+.our-mission {
+  width: 100%;
+}
+.collumn h4 {
+  color:  #141515;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: left;
+}
+.collumn ul {
+  padding-left: 0; 
+}
+.collumn ul li {
+  list-style-type: none;
+  text-align: left;
+}
+.collumn p,
+.collumn ul li  {
+  font-family: Georgia, serif;
+  color:  #565656;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 26px;
+  text-align: left;
+}
+.our-mission h4,
+.our-mission p {
+  text-align: center;
+} 
+.copy {
+  background-color: #000;
+  height: 96px;
+  clear: both;
+}
+.copy p {
+  font-family: Georgia, serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 96px;
+  text-align: center;
+}
+/*media min-wodth 600px*/ 
+@media (min-width: 600px) {
+  .site-menu a {
+    font-size: 1.0rem;
+  }
+  .caption h1 {
+    font-size: 3.0rem;
+  }
+  .caption p {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 0.9rem;
+  }
+  .image-row h4,
+  .image-row p,
+  .collumn h4,
+  .collumn p,
+  .collumn ul li {
+    font-size: 1.4rem;
+  }
+  .copy p {
+    font-size: 1.2rem;
+  }
 }
 /*media min-width 768px*/
 @media (min-width: 768px) {
+  .hero {
+    height: 1300px;
+  }
   .site-menu {
     transform: none;
     top: 35px;
@@ -202,7 +328,31 @@ body {
   .btn {
     font-size: 1.4rem;
   }
+  .btn-play {
+    margin-top: 280px;
+  }
   .btn:after {
     height: 190px;
     top: 100px;
+  }
+  
+  .image-row h4,
+  .image-row p {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .image-gallery {
+    width: 25%;
+  }
+  .collumn {
+    width: 20%;
+  }
+  .our-mission {
+    width: 40%;
+  }
+  .our-mission h4,
+  .our-mission p {
+    text-align: left;
+  }
 }
